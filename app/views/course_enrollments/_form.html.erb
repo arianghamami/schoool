@@ -1,0 +1,15 @@
+<%= simple_form_for(@course_enrollment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :presence_count %>
+    <%= f.input :class_activity_score %>
+    <%= f.input :mid_term_score %>
+    <%= f.input :final_term_score %>
+    <%= f.input :final_score %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

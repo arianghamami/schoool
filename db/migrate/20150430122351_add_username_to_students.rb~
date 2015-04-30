@@ -1,0 +1,4 @@
+class AddUsernameToStudents < ActiveRecord::Migration
+  def change
+  end
+end

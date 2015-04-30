@@ -1,0 +1,4 @@
+class AddTeacherReferencesToCourseEnrollments < ActiveRecord::Migration
+  def change
+  end
+end
