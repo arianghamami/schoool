@@ -1,0 +1,48 @@
+<div id='calendar'></div>
+<div class="row center">
+<span class="col-sm-2"></span>
+<span class="col-sm-8 center">
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Courses</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="center">Name</th>
+      <th class="center">Category</th>
+      <th class="center">Teacher</th>
+      <th class="center">Capacity</th>
+      <th class="center">Number of Students</th>
+      <th class="center">Sessions</th>
+      <th class="center">Start Date</th>
+      <th class="center">End Date</th>
+      <th colspan="3" class="center"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.category %></td>
+        <td><%= course.teacher.name %></td>
+        <td><%= course.capacity %></td>
+        <td><%= course.students.size %></td>
+        <td><%= course.sessions %></td>
+        <td><%= course.start_at %></td>
+        <td><%= course.end_at %></td>
+        <td><%= link_to 'Show', course %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</span>
+<span class="col-sm-2"></span>
+</div>

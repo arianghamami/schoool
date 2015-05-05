@@ -1,0 +1,8 @@
+</br>
+<div class="row center">
+<div class="col-sm-2"></div>
+
+<div class="col-sm-2"><%= link_to_unless_current("Courses", courses_path, :class => 'btn btn-default') %></div>
+
+<div class="col-sm-2"></div>
+</div>

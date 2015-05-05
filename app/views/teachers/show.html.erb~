@@ -1,0 +1,48 @@
+<div class="row center">
+<span class="col-sm-2"></span>
+<span class="col-sm-8 center">
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @teacher.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @teacher.last_name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @teacher.category %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @teacher.email %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @teacher.username %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @teacher.birthday %>
+</p>
+
+<p>
+  <strong>Courses:</strong>
+  <%= @teacher.courses.map {|c| [c.name,c.start_date,c.end_date]} %>
+</p>
+</span>
+<span class="col-sm-2"></span>
+</div>
+<div class="row center">
+<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
+<%= link_to 'Back', teachers_path %>
+</div>

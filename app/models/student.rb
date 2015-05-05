@@ -1,6 +1,8 @@
 class Student < ActiveRecord::Base
 
 	has_secure_password
+	has_many :course_enrollments
+	has_many :courses, :through => :course_enrollments
 	
 	EMAIL_REGEX = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
 	validates_presence_of :first_name
@@ -24,4 +26,8 @@ class Student < ActiveRecord::Base
 	scope :search, lambda { |query|
 		where(["name LIKE ?","%#{query}%"])
 												}
+												
+	def name 
+		"#{first_name} #{last_name}"
+	end
 end

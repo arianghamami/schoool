@@ -1,0 +1,65 @@
+.center 		{ text-align: center }
+
+#errorExplanation { width: 400px; padding: 0; margin: 0 auto 1.5em;
+  border: 1px solid #AA0000; background-color: #FFFFFF; font-size: 12px; }
+#errorExplanation h4 { font-weight: bold; font-size: 12px;
+  padding: 5px 5px 5px 15px; margin: 0; width:
+  background-color: #AA0000; color: #FFFFFF; }
+#errorExplanation p { color: #333333; margin: 0; padding: 3px 0.5em; }
+#errorExplanation ul { margin-top: 0; }
+#errorExplanation ul li { list-style: square; }
+
+#courses .calendar	{
+	border-collapse: collapse;
+	width: 100%;
+	
+	td, th	{
+		font-family: "Lucida Grande", arial, helvetica, sans-serif;
+		font-size: 10px;
+		padding: 6px;
+		border: 1px solid #999;
+					}
+	
+	th	{
+		background: #DDD;
+		color: #666;
+		text-align: center;
+		width: 14.2857142857143%;
+			}
+	
+	td	{
+	background: #FFF;
+	color: #777;
+	height: 80px;
+	vertical-align: top;
+	font-size: 16px;
+			}
+			
+	.notmonth	{
+		color: #CCC;
+						}					
+	.today		{
+		background-color: #D7F2FF;
+						}
+}
+
+#sources #month 	{
+	margin: 0;
+	padding-top: 10px;
+	padding-botton: 10px;
+	text-align: center;
+	a {
+		text-decoration: none;
+		padding: 0 10px;
+		color: #999;
+		}
+}
+
+#sources ul	{
+	font-size: 11px;
+	padding-left: 20px;
+}
+					
+
+	
+	

@@ -1,11 +1,22 @@
 class Course < ActiveRecord::Base
 
 	belongs_to :teacher
+	has_many :course_enrollments
+	has_many :students, :through => :course_enrollments
 	
 	validates_presence_of :name
 	validates_length_of :name, :maximum => 25
 	validates_presence_of :category
 	validates_length_of :category, :maximum => 25
+	validates_presence_of :capacity
+	validates_presence_of :sessions
+	validate :course_capacity, :on => :create
 
-	
+
+	def course_capacity
+		if course_enrollments.size > capacity - 1
+			errors.add(:base, 'is already full')
+		end
+	end
+
 end

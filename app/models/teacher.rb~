@@ -16,7 +16,13 @@ class Teacher < ActiveRecord::Base
 	validates_format_of :email, :with => EMAIL_REGEX
 	validates_presence_of :category
 	validates_length_of :category, :maximum => 25
-	
+	  validates :password, 
+          # you only need presence on create
+          :presence => { :on => :create },
+          # allow_nil for length (presence will handle it on create)
+          :length   => { :minimum => 6, :allow_nil => true },
+          # and use confirmation to ensure they always match
+          :confirmation => true	
 	scope :newest_first, lambda { order("teachers.created_at DESC") }
 	scope :search, lambda { |query|
 		where(["name LIKE ?","%#{query}%"])

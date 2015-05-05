@@ -1,0 +1,50 @@
+<div class="row center">
+<span class="col-sm-2"></span>
+<span class="col-sm-8 center">
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Course Enrollments</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+    	<th class="center"><%= link_to 'Course', :sort => 'course.name' %></th>
+    	<th class="center"><%= link_to 'Student', :sort => 'student.name' %></th>
+      <th class="center"><%= link_to 'Presence count', :sort => 'presence_count desc' %></th>
+      <th class="center"><%= link_to 'Class activity score', :sort => 'class_activity_score desc' %></th>
+      <th class="center"><%= link_to 'Mid term score', :sort => 'mid_term_score desc' %></th>
+      <th class="center"><%= link_to 'Final term score', :sort => 'final_term_score desc' %></th>
+      <th class="center"><%= link_to 'Final score', :sort => 'final_score desc' %></th>
+      <th colspan="3" class="center"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @course_enrollments.each do |course_enrollment| %>
+      <tr>
+      	<td><%= course_enrollment.course.name %></td>
+      	<td><%= course_enrollment.student.name %></td>
+        <td><%= course_enrollment.presence_count %></td>
+        <td><%= course_enrollment.class_activity_score %></td>
+        <td><%= course_enrollment.mid_term_score %></td>
+        <td><%= course_enrollment.final_term_score %></td>
+        <td><%= course_enrollment.final_score %></td>
+        <td><%= link_to 'Show', course_enrollment %></td>
+        <td><%= link_to 'Edit', edit_course_enrollment_path(course_enrollment) %></td>
+        <td><%= link_to 'Destroy', course_enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+</span>
+<span class="col-sm-2"></span>
+</div>
+<div class="row center">
+<%= link_to 'New Course enrollment', new_course_enrollment_path, class: "btn btn-default" %>
+</div>

@@ -1,17 +1,23 @@
+<div class="row center">
+<span class="col-sm-2"></span>
+<span class="col-sm-8 center">
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Teachers</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Category</th>
-      <th>Email</th>
-      <th>Username</th>
-      <th>Birthday</th>
-      <th colspan="3"></th>
+      <th class="center">First name</th>
+      <th class="center">Last name</th>
+      <th class="center">Category</th>
+      <th class="center">Email</th>
+      <th class="center">Username</th>
+      <th class="center">Birthday</th>
+      <th class="center">Number of Courses</th>
+      <th colspan="3" class="center"></th>
     </tr>
   </thead>
 
@@ -24,6 +30,7 @@
         <td><%= teacher.email %></td>
         <td><%= teacher.username %></td>
         <td><%= teacher.birthday %></td>
+        <td><%= teacher.courses.size %></td>
         <td><%= link_to 'Show', teacher %></td>
         <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
         <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -33,5 +40,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Teacher', new_teacher_path %>
+</span>
+<span class="col-sm-2"></span>
+</div>

@@ -27,4 +27,8 @@ class Teacher < ActiveRecord::Base
 	scope :search, lambda { |query|
 		where(["name LIKE ?","%#{query}%"])
 												}
+												
+	def name 
+		"#{first_name} #{last_name}"
+	end
 end

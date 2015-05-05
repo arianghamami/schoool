@@ -4,7 +4,7 @@ class CourseEnrollmentsController < ApplicationController
   # GET /course_enrollments
   # GET /course_enrollments.json
   def index
-    @course_enrollments = CourseEnrollment.all
+    @course_enrollments = CourseEnrollment.order(params[:sort])
   end
 
   # GET /course_enrollments/1
@@ -14,7 +14,7 @@ class CourseEnrollmentsController < ApplicationController
 
   # GET /course_enrollments/new
   def new
-    @course_enrollment = CourseEnrollment.new
+    @course_enrollment = CourseEnrollment.new({:presence_count => 0, :class_activity_score => 0, :mid_term_score => 0, :final_term_score => 0})
   end
 
   # GET /course_enrollments/1/edit
@@ -69,6 +69,8 @@ class CourseEnrollmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_enrollment_params
-      params.require(:course_enrollment).permit(:presence_count, :class_activity_score, :mid_term_score, :final_term_score, :final_score)
+      params.require(:course_enrollment).permit(:presence_count, :class_activity_score, :mid_term_score, :final_term_score, :final_score, :course_id, :student_id, :start_date)
     end
+    
+
 end

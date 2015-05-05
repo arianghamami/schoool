@@ -1,0 +1,47 @@
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-8 center"></div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @course_enrollment.course.name %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @course_enrollment.student.name %>
+</p>
+
+<p>
+  <strong>Presence count:</strong>
+  <%= @course_enrollment.presence_count %>
+</p>
+
+<p>
+  <strong>Class activity score:</strong>
+  <%= @course_enrollment.class_activity_score %>
+</p>
+
+<p>
+  <strong>Mid term score:</strong>
+  <%= @course_enrollment.mid_term_score %>
+</p>
+
+<p>
+  <strong>Final term score:</strong>
+  <%= @course_enrollment.final_term_score %>
+</p>
+
+<p>
+  <strong>Final score:</strong>
+  <%= @course_enrollment.final_score %>
+</p>
+
+<%= link_to 'Edit', edit_course_enrollment_path(@course_enrollment) %> |
+<%= link_to 'Back', course_enrollments_path %>
+
+</div>
+<div class="col-sm-2"></div>
+</div>

@@ -1,0 +1,46 @@
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-8 center">
+
+<%= error_messages_for(@course_enrollment) %>
+<%= simple_form_for(@course_enrollment, html: { class: 'form-vertical' }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.label :course_name %>
+    <%= f.select :course_id, Course.all.map {|c| [ c.name, c.id ]}, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :student_name %>
+    <%= f.select :student_id, Student.all.map {|s| [ s.name, s.id ]}, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :presence_count %>
+    <%= f.number_field :presence_count, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :class_activity_score %>
+    <%= f.number_field :class_activity_score, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mid_term_score %>
+    <%= f.number_field :mid_term_score, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :final_term_score %>
+    <%= f.number_field :final_term_score, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :final_score %>
+    <%= f.number_field :final_score, class: "form-control" %>
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+</div>
+<div class="col-sm-2"></div>
+</div>

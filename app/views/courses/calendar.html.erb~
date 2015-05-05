@@ -1,0 +1,14 @@
+<h1>Courses</h1>
+<div id="courses">
+	<%= calendar do |date| %>
+		<%= date.day %>
+		<% if @courses_by_date[date] %>
+			<ul>
+				<%= @courses_by_date[date].each do |course| %>
+					<li><%= link_to course.name, course %></li>
+				<% end %>
+			</ul>
+		<% end %>
+	<% end %>
+</div>
+

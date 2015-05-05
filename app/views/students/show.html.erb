@@ -1,3 +1,8 @@
+<div class="row center">
+<span class="col-sm-2"></span>
+<span class="col-sm-8 center">
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -11,6 +16,11 @@
 </p>
 
 <p>
+  <strong>Username:</strong>
+  <%= @student.username %>
+</p>
+
+<p>
   <strong>Birthday:</strong>
   <%= @student.birthday %>
 </p>
@@ -20,5 +30,14 @@
   <%= @student.email %>
 </p>
 
+<p>
+  <strong>Courses:</strong>
+  <%= @student.courses.map {|c| [c.name,c.start_at,c.end_at]} %>
+</p>
+</span>
+<span class="col-sm-2"></span>
+</div>
+<div class="row center">
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
+</div>

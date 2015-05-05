@@ -1,0 +1,5 @@
+class AddStartDateToCourses < ActiveRecord::Migration
+  def change
+    add_column :courses, :date, :string
+  end
+end
